@@ -1,13 +1,265 @@
+<!--
+    <p>5 "p" elements in total.</p>
+    <code>5 "code" elements in total.</code>
+    <li>10 "li" elements in total.</li>
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>FCC Technical Document Page Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    
-    
+
+    <div id="wrapper">
+        <nav id="navbar">
+            <header>
+                <h3>CSS Flexbox Basics</h3>
+            </header>
+            <a href="#Introduction" class="nav-link">Introduction</a>
+            <a href="#The_Flex_Container" class="nav-link">The Flex Container</a>
+            <a href="#Flex_Direction" class="nav-link">Flex Direction</a>
+            <a href="#Justify_Content" class="nav-link">Justify Content</a>
+            <a href="#Align_Items" class="nav-link">Align Items</a>
+            <a href="#Align_Self" class="nav-link">Align Self</a>
+            <a href="#Flex" class="nav-link">Flex</a>
+        </nav>
+
+        <main id="main-doc">
+
+            <section id="Introduction" class="main-section">
+                <header>
+                    <h3>Introduction</h3>
+                </header>
+                <p>CSS Flexible Box Layout is a module of CSS that defines a CSS box model optimized for user interface design, and the layout of items in one dimension. In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated</p>
+            </section>
+
+            <section id="The_Flex_Container" class="main-section">
+                <header>
+                    <h3>The Flex Container</h3>
+                </header>
+                <p>An area of a document laid out using flexbox is called a flex container. To create a flex container, we set the value of the area's container's display property to flex or inline-flex. As soon as we do this the direct children of that container become flex items. As with all properties in CSS, some initial values are defined, so when creating a flex container all of the contained flex items will behave in the following way.</p>
+
+                <ul>
+                    <li>Items display in a row (the flex-direction property's default is row).</li>
+                    <li>The items start from the start edge of the main axis.</li>
+                    <li>The items do not stretch on the main dimension, but can shrink.</li>
+                    <li>The items will stretch to fill the size of the cross axis.</li>
+                    <li>The flex-basis property is set to auto.</li>
+                    <li>The flex-wrap property is set to nowrap.</li>
+                </ul>
+
+                <p>The result of this is that your items will all line up in a row, using the size of the content as their size in the main axis. If there are more items than can fit in the container, they will not wrap but will instead overflow. If some items are taller than others, all items will stretch along the cross axis to fill its full size.</p>
+            </section>
+            
+            <!-- flex-direction -->
+
+            <section id="Flex_Direction" class="main-section">
+                <header>
+                    <h3>Flex Direction</h3>
+                </header>
+                <p>The flex-direction CSS property specifies how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).</p>
+                <p>When working with flexbox you need to think in terms of two axes — the main axis and the cross axis. The main axis is defined by the flex-direction property, and the cross axis runs perpendicular to it. Everything we do with flexbox refers back to these axes, so it is worth understanding how they work from the outset.</p>
+            </section>
+
+            <div class="row" style="justify-content: space-between">
+                <div class="row-cell">
+                    <code>flex-direction: row;</code>
+                    <div class="display" style="align-items: stretch; width: 150px; flex-direction: row">
+                        <div class="div1">1</div>
+                        <div class="div2">2</div>
+                        <div class="div3">3</div>
+                    </div>
+                </div>
+                <div class="row-cell">
+                    <code>flex-direction: row-reverse;</code>
+                    <div class="display" style="align-items: flex-start; width: 150px; flex-direction: row-reverse;">
+                        <div class="div1">1</div>
+                        <div class="div2">2</div>
+                        <div class="div3">3</div>
+                    </div>
+                </div>
+                <div class="row-cell">
+                    <code>flex-direction: column;</code>
+                    <div class="display" style="align-items: center; flex-end; height: auto; width: 150px; flex-direction: column;">
+                        <div class="div1">1</div>
+                        <div class="div2">2</div>
+                        <div class="div3">3</div>
+                    </div>
+                </div>
+                <div class="row-cell">
+                    <code>flex-direction: column-reverse;</code>
+                    <div class="display" style="align-items: center; height: auto; width: 150px; flex-direction: column-reverse;">
+                        <div class="div1">1</div>
+                        <div class="div2">2</div>
+                        <div class="div3">3</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- justify-content -->
+
+            <section id="Justify_Content" class="main-section">
+                <header>
+                    <h3>Justify Content</h3>
+                </header>
+                <p>The justify-content property defines how the browser distributes space between and around content items along the main axis of their container.</p>
+
+                <code>justify-content: flex-start;</code>
+                <div class="display" style="justify-content: flex-start">
+                    <div class="div1">1</div>
+                    <div class="div2">2</div>
+                    <div class="div3">3</div>
+                </div>
+
+                <code>justify-content: center;</code>
+                <div class="display" style="justify-content: center">
+                    <div class="div1">1</div>
+                    <div class="div2">2</div>
+                    <div class="div3">3</div>
+                </div>
+
+                <code>justify-content: flex-end;</code>
+                <div class="display" style="justify-content: flex-end">
+                    <div class="div1">1</div>
+                    <div class="div2">2</div>
+                    <div class="div3">3</div>
+                </div>
+
+                <code>justify-content: space-evenly;</code>
+                <div class="display" style="justify-content: space-evenly">
+                    <div class="div1">1</div>
+                    <div class="div2">2</div>
+                    <div class="div3">3</div>
+                </div>
+
+                <code>justify-content: space-around;</code>
+                <div class="display" style="justify-content: space-around">
+                    <div class="div1">1</div>
+                    <div class="div2">2</div>
+                    <div class="div3">3</div>
+                </div>
+
+                <code>justify-content: space-between;</code>
+                <div class="display" style="justify-content: space-between">
+                    <div class="div1">1</div>
+                    <div class="div2">2</div>
+                    <div class="div3">3</div>
+                </div>
+            </section>
+
+            <!-- align-items -->
+
+            <section id="Align_Items" class="main-section">
+                <header>
+                    <h3>Align Items</h3>
+                </header>
+                <p>The align-items property defines how the browser distributes space between and around flex items along the cross-axis of their container. This means it works like justify-content but in the perpendicular direction.</p>
+            </section>
+
+            <div class="row" style="justify-content: space-between">
+                <div class="row-cell">
+                    <code>align-items: stretch;</code>
+                    <div class="display" style="align-items: stretch; width: 150px">
+                        <div class="div1">1</div>
+                        <div class="div2">2</div>
+                        <div class="div3">3</div>
+                    </div>
+                </div>
+                <div class="row-cell">
+                    <code>align-items: flex-start;</code>
+                    <div class="display" style="align-items: flex-start; width: 150px">
+                        <div class="div1">1</div>
+                        <div class="div2">2</div>
+                        <div class="div3">3</div>
+                    </div>
+                </div>
+                <div class="row-cell">
+                    <code>align-items: flex-end;</code>
+                    <div class="display" style="align-items: flex-end; width: 150px">
+                        <div class="div1">1</div>
+                        <div class="div2">2</div>
+                        <div class="div3">3</div>
+                    </div>
+                </div>
+                <div class="row-cell">
+                    <code>align-items: center;</code>
+                    <div class="display" style="align-items: center; width: 150px">
+                        <div class="div1">1</div>
+                        <div class="div2">2</div>
+                        <div class="div3">3</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- align-self -->
+
+            <section id="Align_Self" class="main-section">
+                <header>
+                    <h3>Align Self</h3>
+                </header>
+                <p>The align-self CSS property aligns flex items of the current flex line overriding the align-items value. If any of the item's cross-axis margin is set to auto, then align</p>
+
+                <div class="row">
+                    <div class="row-cell">
+                        <code>align-self: </code>
+                        <div class="display" style="max-width: 900px; justify-content: space-between">
+                            <div class="div1" style="align-self:flex-start">flex-start</div>
+                            <div class="div2" style="align-self: center">center</div>
+                            <div class="div3" style="align-self:flex-end">flex-end</div>
+                            <div class="div4" style="align-self:stretch">stretch</div>
+                            <div class="div5" style="align-self:baseline">baseline</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- flex -->
+
+            <section id="Flex" class="main-section">
+                <header>
+                    <h3>Flex</h3>
+                </header>
+                <p>The flex CSS property specifies how a flex item will grow or shrink so as to fit the space available in its flex container. This is a shorthand property that sets flex-grow, flex-shrink, and flex-basis.</p>
+                <p>For most purposes, authors should set flex to one of the following values: auto, initial, none, or a positive unitless number. To see the effect of these values, try resizing the flex containers below:</p>
+            </section>
+
+            <div class="row" style="justify-content: space-between">
+                <div class="row-cell">
+                    <code>flex: </code>
+                    <div class="display" style="min-width: 200px">
+                        <div class="div1" style="flex: 1">flex: 1</div>
+                        <div class="div2" style="flex: 1">flex: 1</div>
+                        <div class="div3" style="flex: 1">flex: 1</div>
+                    </div>
+                </div>
+                <div class="row-cell">
+                    <code>flex: </code>
+                    <div class="display" style="min-width: 200px">
+                        <div class="div1" style="flex: 1">flex: 1</div>
+                        <div class="div2" style="flex: 2">flex: 2</div>
+                        <div class="div3" style="flex: 1">flex: 1</div>
+                    </div>
+                </div>
+                <div class="row-cell">
+                    <code>flex: </code>
+                    <div class="display" style="min-width: 200px">
+                        <div class="div1" style="flex: 1">flex: 1</div>
+                        <div class="div2" style="flex: 2">flex: 2</div>
+                        <div class="div3" style="flex: 3">flex: 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <em><h4>Reference: Documentation taken from this <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container">page</a>.</h4></em>
+        </main>
+
+    </div>
+
 </body>
+
 </html>
